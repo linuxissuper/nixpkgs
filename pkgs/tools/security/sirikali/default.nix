@@ -64,10 +64,6 @@ stdenv.mkDerivation rec {
     ]}''
   ];
 
-  postPatch = ''
-    substituteInPlace "src/engines.cpp" --replace "/sbin/" "/run/wrappers/bin/"
-  '';
-
   doCheck = true;
 
   cmakeFlags = [
